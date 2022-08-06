@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "homes#top"
+  get "about", to: "homes#about", as:"about"
 
   resources :games, only: [:create, :index, :show, :edit, :update, :destroy]
   resources :users, only: [:index, :show]
