@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   #呼び出された他のコントローラからも参照できます。
 
   def config_premitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
     # sign_upの際に、ユーザー名nameのデータ操作を許可しています。
   end
 
   def user_sign_in_path_for(resource)
-    about_path
+    users_path
   end
 
   def user_sign_out_path_for(resource)
