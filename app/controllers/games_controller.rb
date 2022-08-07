@@ -3,6 +3,9 @@ class GamesController < ApplicationController
   end
 
   def index
+    @games = Game.all
+    @game_new = Game.new
+    @user = current_user
   end
 
   def edit
