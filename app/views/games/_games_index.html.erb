@@ -1,20 +1,26 @@
-<table class="table">
+<table class="table tabel-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
   <tbody>
     <% games.each do |game| %>
       <tr>
         <td>
           <%= link_to (game.user) do %>
-            <%= image_tag game.user.get_profile_image, size:'100x100' %><br>
-            <%= game.user.name %>
+            <%= image_tag game.user.get_profile_image, size:'100x100' %>
           <% end %>
+        </td>
         <td>
           <%= link_to (game) do %>
             <%= game.title %>
           <% end %>
         </td>
         <td><%= game.body %></td>
-        <td><%= link_to "Edit", edit_game_path(game), class:'btn btn-success' %></td>
-        <td><%= link_to "Destroy", game_path(game), method: :delete, class:'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
